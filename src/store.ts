@@ -11,6 +11,15 @@ export type Moment = {
 };
 
 export type State = ReturnType<typeof reducer>;
+// function reducer(currentState: State = initialState, action: AnyAction): State {
+  //   return {
+  //     sad: Sadnessreducur(currentState.sad, action),
+  //     happy: Happynessreducur(currentState.happy, action),
+  //     angray: Angraynessreducur(currentState.angray, action),
+  //   };
+  // }
+  
+  // reducer ka updated version in combineReducurs
 
 const reducer = combineReducers({
   sad: Sadnessreducur,
@@ -63,10 +72,4 @@ export default store;
 //     return currentState;
 // }
 
-// function reducer(currentState: State = initialState, action: AnyAction): State {
-//   return {
-//     sad: Sadnessreducur(currentState.sad, action),
-//     happy: Happynessreducur(currentState.happy, action),
-//     angray: Angraynessreducur(currentState.angray, action),
-//   };
-// }
+// 

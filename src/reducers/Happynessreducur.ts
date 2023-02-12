@@ -5,21 +5,25 @@ import produce from "immer";
 
 export type happystate = {
   happyMoment: Moment[];
+
 };
+
 export const intisialhappyState: happystate = {
   happyMoment: [],
-};
+}
 
 function Happynessreducur(currentState= intisialhappyState,action:AnyAction):happystate {
   switch (action.type) {
     case HAPPY_BUTTON_CLICKED:
-     const  newhappyMoment ={
-      when:action.payload.when,
-      intensity:action.payload.count,
-
-     };
+    //  const  newhappyMoment ={
+    //   when:action.payload.when,
+    //   intensity:action.payload.count,
+    //  };
      return produce(currentState,(draft)=>{
-      draft.happyMoment.push(newhappyMoment)
+      draft.happyMoment.push(action.payload)
+      
+      console.log(action.payload)
+      console.log(draft)
      })
     default:
           return currentState;
