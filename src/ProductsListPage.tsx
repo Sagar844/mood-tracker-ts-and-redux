@@ -32,7 +32,7 @@ const  dispatch = useDispatch();
           <div key={m.id} className="text-2xl text-red-700">
             {m.price}
             {m.title}
-            <img src={m.thumbnail} alt="" />
+            {/* <img src={m.thumbnail} alt="" /> */}
           </div>
         ))}
     </div>

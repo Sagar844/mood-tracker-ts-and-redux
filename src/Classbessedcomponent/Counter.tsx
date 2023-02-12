@@ -1,4 +1,5 @@
 import React, { Component, PureComponent } from "react";
+import Butondisable from "./Butondisable";
 
 type CounterProps = {
   name: string;
@@ -34,6 +35,8 @@ class Counter extends PureComponent<CounterProps, Counterstate> {
           {" "}
           incremet
         </button>
+
+        <Butondisable></Butondisable>
       </>
     );
   }

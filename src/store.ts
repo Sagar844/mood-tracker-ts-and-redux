@@ -4,13 +4,13 @@ import Happynessreducur from "./reducers/Happynessreducur";
 import Angraynessreducur from "./reducers/Angraynessreducur";
 import Productreducur from "./reducers/products";
 import sagaMiddleware, { rootSaga } from "./Sagas";
+import OrderReducur from "./reducers/order";
 
 export type Moment = {
   intensity: number;
   when: Date;
 };
 
-export type State = ReturnType<typeof reducer>;
 // function reducer(currentState: State = initialState, action: AnyAction): State {
   //   return {
   //     sad: Sadnessreducur(currentState.sad, action),
@@ -26,18 +26,49 @@ const reducer = combineReducers({
   happy: Happynessreducur,
   angray: Angraynessreducur,
   products: Productreducur,
+  orders:OrderReducur,
 });
 
+export type State = ReturnType<typeof reducer>;
 const store = createStore(
   reducer,
-  applyMiddleware(sagaMiddleware)
+  // applyMiddleware(sagaMiddleware)
 
-  // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-sagaMiddleware.run(rootSaga);
+// sagaMiddleware.run(rootSaga);
 
 export default store;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // first reducer function if and else condition
 
